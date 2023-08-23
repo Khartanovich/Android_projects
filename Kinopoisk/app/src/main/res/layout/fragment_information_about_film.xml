@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".presentation.home.infofilm.InformationAboutFilmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/posterUrl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.99"
+            android:background="@drawable/background_poster_url"
+            app:layout_constraintBottom_toBottomOf="@+id/posterUrl"
+            app:layout_constraintEnd_toEndOf="@+id/posterUrl"
+            app:layout_constraintStart_toStartOf="@+id/posterUrl"
+            app:layout_constraintTop_toTopOf="@+id/posterUrl" />
+
+        <ImageView
+            android:id="@+id/logoUrl"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/posterUrl" />
+
+        <TextView
+            android:id="@+id/rating_and_name"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginBottom="91dp"
+            android:text="@string/rating_and_name"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/posterUrl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/yer_and_genres"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/yer_and_genres"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating_and_name" />
+
+        <LinearLayout
+            android:id="@+id/actionBarUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yer_and_genres">
+
+            <CheckBox
+                android:id="@+id/isFavorite"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
+                android:button="@drawable/select_favorite_state" />
+
+            <CheckBox
+                android:id="@+id/wantToSee"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
+                android:button="@drawable/select_want_to_see_state" />
+
+            <CheckBox
+                android:id="@+id/viewed"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
+                android:button="@drawable/select_visibility_state" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/share"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:checked="false"
+                android:src="@drawable/ic_baseline_share_24" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/showMoreMenu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_more_horiz_24" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="26dp"
+            android:text="@string/description"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/posterUrl" />
+
+        <TextView
+            android:id="@+id/actorsFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/filmed_in_the_film"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/countAllActors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:text="@string/all"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/actorsFilm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/actorsFilm" />
+
+        <ImageView
+            android:id="@+id/arrowRight"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="9dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/countAllActors"
+            app:layout_constraintStart_toEndOf="@+id/countAllActors"
+            app:layout_constraintTop_toTopOf="@+id/countAllActors" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerAllActors"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/actorsFilm"
+            app:layout_constraintTop_toBottomOf="@+id/actorsFilm"
+            app:spanCount="4"
+            tools:listitem="@layout/item_actors_for_recycler_view" />
+
+        <TextView
+            android:id="@+id/otherStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/worked_on_the_film"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerAllActors" />
+
+        <TextView
+            android:id="@+id/countOtherStaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:text="@string/all"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/otherStaff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/otherStaff" />
+
+        <ImageView
+            android:id="@+id/arrowRight2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="9dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/countOtherStaff"
+            app:layout_constraintStart_toEndOf="@+id/countOtherStaff"
+            app:layout_constraintTop_toTopOf="@+id/countOtherStaff" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerOtherStaff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:clipToPadding="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/otherStaff"
+            app:layout_constraintTop_toBottomOf="@+id/otherStaff"
+            app:spanCount="2"
+            tools:listitem="@layout/item_actors_for_recycler_view" />
+
+        <TextView
+            android:id="@+id/gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/gallery"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/recyclerOtherStaff"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerOtherStaff" />
+
+        <TextView
+            android:id="@+id/allImagesGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:text="@string/all_images"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gallery" />
+
+        <ImageView
+            android:id="@+id/arrowRight3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="9dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/allImagesGallery"
+            app:layout_constraintStart_toEndOf="@+id/allImagesGallery"
+            app:layout_constraintTop_toTopOf="@+id/allImagesGallery" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@+id/gallery"
+            app:layout_constraintTop_toBottomOf="@+id/gallery"
+            tools:listitem="@layout/item_image_gallery" />
+
+        <TextView
+            android:id="@+id/similar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/similar"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/recyclerGallery"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerGallery" />
+
+        <TextView
+            android:id="@+id/allSimilarFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="46dp"
+            android:text="@string/all_films"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/similar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/similar" />
+
+        <ImageView
+            android:id="@+id/arrowRight4"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="9dp"
+            android:src="@drawable/arrow_forward"
+            app:layout_constraintBottom_toBottomOf="@+id/allSimilarFilm"
+            app:layout_constraintStart_toEndOf="@+id/allSimilarFilm"
+            app:layout_constraintTop_toTopOf="@+id/allSimilarFilm" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSimilarFilms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingEnd="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/similar"
+            app:layout_constraintTop_toBottomOf="@+id/similar"
+            tools:listitem="@layout/item_image_gallery" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

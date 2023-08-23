@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="26dp"
+    android:paddingEnd="26dp"
+    tools:context=".presentation.home.staff.InformationAboutStaffFragment">
+
+    <ImageView
+        android:id="@+id/posterUrlStaff"
+        android:layout_width="146dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameStaffRu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/name_ru"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/posterUrlStaff"
+        app:layout_constraintTop_toTopOf="@+id/posterUrlStaff" />
+
+    <TextView
+        android:id="@+id/nameStaffEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_en"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/nameStaffRu"
+        app:layout_constraintTop_toBottomOf="@+id/nameStaffRu" />
+
+    <TextView
+        android:id="@+id/profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profession"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/nameStaffRu"
+        app:layout_constraintTop_toBottomOf="@+id/nameStaffEn" />
+
+    <TextView
+        android:id="@+id/theBest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/the_best"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/posterUrlStaff"
+        app:layout_constraintTop_toBottomOf="@+id/posterUrlStaff" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/staffRecyclerBestFilm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/theBest"
+        app:layout_constraintTop_toBottomOf="@+id/theBest"
+        tools:listitem="@layout/item_movie_home_page" />
+
+    <TextView
+        android:id="@+id/textFilmography"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/filmography"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/staffRecyclerBestFilm"
+        app:layout_constraintTop_toBottomOf="@+id/staffRecyclerBestFilm" />
+
+    <TextView
+        android:id="@+id/goAllFilms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/to_the_list"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textFilmography"
+        app:layout_constraintEnd_toStartOf="@+id/arrowRight2"
+        app:layout_constraintTop_toTopOf="@+id/textFilmography" />
+
+    <ImageView
+        android:id="@+id/arrowRight2"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="9dp"
+        android:src="@drawable/arrow_forward"
+        app:layout_constraintBottom_toBottomOf="@+id/goAllFilms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/goAllFilms" />
+
+    <TextView
+        android:id="@+id/All"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/all_movies"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/textFilmography"
+        app:layout_constraintTop_toBottomOf="@+id/textFilmography" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/movies"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/All"
+        app:layout_constraintStart_toEndOf="@+id/All"
+        app:layout_constraintTop_toTopOf="@+id/All" />
+</androidx.constraintlayout.widget.ConstraintLayout>
