@@ -1,7 +1,6 @@
 package com.example.skillcinema.presentation.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ import com.example.skillcinema.domain.search.usecase.SettingsUseCase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -90,7 +88,7 @@ class SearchFragment : Fragment() {
             type!!
         ).onEach {
             searchAdapter.submitData(it)
-            binding.notFound.isVisible = searchAdapter.itemCount > 0 //не правильно/непонятно работает
+            binding.notFound.isVisible = searchAdapter.itemCount <= 0
         }.launchIn(viewLifecycleOwner.lifecycleScope)
     }
 
