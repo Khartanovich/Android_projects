@@ -2,8 +2,6 @@ package com.example.skillcinema.presentation.profile
 
 import androidx.lifecycle.*
 import com.example.skillcinema.entity.profile.Collections
-import com.example.skillcinema.data.profile.FilmDao
-import com.example.skillcinema.domain.profile.ProfileMainScreenRepository
 import com.example.skillcinema.domain.profile.usecase.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
